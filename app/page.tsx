@@ -1,6 +1,6 @@
 import About from "@/components/about";
 import Intro from "@/components/Intro";
-import Projects from "@/components/project";
+import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 
 export default function Home() {
