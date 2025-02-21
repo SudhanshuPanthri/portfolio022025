@@ -1,14 +1,28 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { useInView } from "react-intersection-observer";
 
 
 const Projects = () => {
+
+    const { ref, inView } = useInView({
+        threshold: 0.5
+    });
+    const { setActiveSection, timeofLastClick } = useActiveSectionContext();
+
+    useEffect(() => {
+        if (inView && Date.now() - timeofLastClick > 1000) {
+            setActiveSection("Projects");
+        }
+    }, [inView, setActiveSection, timeofLastClick])
+
     return (
-        <motion.section>
+        <section ref={ref} id="projects" className="scroll-mt-28">
             <SectionHeading name="Projects" />
             <div>
                 {projectsData.map((project, index) => (
@@ -17,7 +31,7 @@ const Projects = () => {
                     </React.Fragment>
                 ))}
             </div>
-        </motion.section>
+        </section>
     )
 }
 
