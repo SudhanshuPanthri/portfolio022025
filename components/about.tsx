@@ -30,7 +30,7 @@ const About = () => {
             <SectionHeading name="About Me " />
             <p className="mb-3">
                 <span>
-                    A software developer with a year of experience working with <span className="font-bold">C#, .NET, Blazor, SQL and Azure.</span> I love building efficient, clean code, and I'm always excited to learn new things and improve my skills along the way.
+                    A software developer with a year of experience working with <span className="font-bold">C#, .NET, Blazor, SQL and Azure.</span> I love building efficient, clean code, and I'm always excited to learn new things and improve my skills along the way. {""}
                 </span>
                 <span>
                     When I'm not coding, you'll probably find me {""}

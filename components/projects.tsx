@@ -22,7 +22,7 @@ const Projects = () => {
     }, [inView, setActiveSection, timeofLastClick])
 
     return (
-        <section ref={ref} id="projects" className="scroll-mt-28">
+        <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
             <SectionHeading name="Projects" />
             <div>
                 {projectsData.map((project, index) => (
