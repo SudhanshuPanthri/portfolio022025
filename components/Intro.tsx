@@ -15,7 +15,7 @@ const Intro = () => {
     const { ref, inView } = useInView({
         threshold: 0.5
     });
-    const { setActiveSection, timeofLastClick } = useActiveSectionContext();
+    const { setActiveSection, timeofLastClick, setTimeofLastClick } = useActiveSectionContext();
 
     useEffect(() => {
         if (inView && Date.now() - timeofLastClick > 1000) {
@@ -77,7 +77,10 @@ const Intro = () => {
                     delay: 0.1
                 }}
             >
-                <Link href="#contact" className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition">
+                <Link href="#contact" className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition" onClick={() => {
+                    setActiveSection("Contact");
+                    setTimeofLastClick(Date.now());
+                }}>
                     Contact me here <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
                 </Link>
 

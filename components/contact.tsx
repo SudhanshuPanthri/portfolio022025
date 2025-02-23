@@ -1,10 +1,13 @@
 "use client"
 
-import { FaPaperPlane } from "react-icons/fa";
 import SectionHeading from "./section-heading";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
+import { sendEmail } from "@/actions/sendEmail";
+import SubmitButton from "./submit-button";
+import toast from "react-hot-toast";
 
 const Contact = () => {
 
@@ -13,21 +16,30 @@ const Contact = () => {
     });
     const { setActiveSection, timeofLastClick } = useActiveSectionContext();
 
+
     useEffect(() => {
         if (inView && Date.now() - timeofLastClick > 1000) {
             setActiveSection("Contact");
         }
     }, [inView, setActiveSection, timeofLastClick])
     return (
-        <section id="contact" ref={ref} className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center">
+        <motion.section id="contact" ref={ref} className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.175 }} viewport={{ once: true }}>
             <SectionHeading name="Contact" />
             <p className="text-gray-700 -mt-5">Please contact me directly at <a className="underline text-orange-500" href="mailto:panthrisudhanshu666@gmail.com">panthrisudhanshu666@gmail.com</a>{" "}or through this form</p>
-            <form className="mt-10 flex flex-col">
-                <input className="h-14 rounded-md borderBlack px-4" type="email" placeholder="Your email" />
-                <textarea className="h-52 my-3 rounded-md borderBlack p-4" placeholder="Your message" />
-                <button className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all hover:bg-gray-950 focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105" type="submit">Submit <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" /></button>
+            <form className="mt-10 flex flex-col" action={async (formData) => {
+                const { data, error } = await sendEmail(formData);
+
+                if (error) {
+                    toast.error(error);
+                    return;
+                }
+                toast.success("Email sent successfully");
+            }}>
+                <input className="h-14 rounded-md borderBlack px-4" type="email" required maxLength={500} placeholder="Your email" name="senderEmail" />
+                <textarea className="h-52 my-3 rounded-md borderBlack p-4" required maxLength={5000} placeholder="Your message" name="message" />
+                <SubmitButton />
             </form>
-        </section>
+        </motion.section>
     )
 }
 
