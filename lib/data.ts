@@ -32,38 +32,42 @@ export const links = [
     },
 ] as const;
 
-export const experiencesData = [{
-    title: "BCA",
-    location: "JIMS, Delhi",
-    description:
-        "Completed Bachelor of Computer Applications (BCA) from JIMS, Delhi with 9.0 CGPA",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019 - 2022",
-},
-{
-    title: "MCA",
-    location: "VIPS, Delhi",
-    description:
-        "Completed Master of Computer Applications (MCA) from VIPS, Delhi with 8.5 CGPA",
-    icon: React.createElement(LuGraduationCap),
-    date: "2022 - 2024",
-},
-{
-    title: "Software Developer Intern",
-    location: "Delhi, IN",
-    description:
-        "Worked as a software developer intern at Symbiotic Consulting Group working on tech stack of C#, .NET, SQL",
-    icon: React.createElement(CgWorkAlt),
-    date: "2023 DEC - 2024 APR",
-},
-{
-    title: "Software Developer",
-    location: "Delhi, IN",
-    description:
-        "Working as a Full Stack Software Developer at Symbiotic Consulting Group",
-    icon: React.createElement(CgWorkAlt),
-    date: "2024 MAY - Present",
-},
+export const educationData = [
+    {
+        title: "BCA",
+        location: "JIMS, Delhi",
+        description:
+            "Completed Bachelor of Computer Applications (BCA) from JIMS, Delhi with 9.0 CGPA",
+        icon: React.createElement(LuGraduationCap),
+        date: "2019 - 2022",
+    },
+    {
+        title: "MCA",
+        location: "VIPS, Delhi",
+        description:
+            "Completed Master of Computer Applications (MCA) from VIPS, Delhi with 8.5 CGPA",
+        icon: React.createElement(LuGraduationCap),
+        date: "2022 - 2024",
+    },
+]
+
+export const experiencesData = [
+    {
+        title: "Software Developer Intern",
+        location: "Delhi, IN",
+        description:
+            "Worked as a software developer intern at Symbiotic Consulting Group working on tech stack of C#, .NET, SQL",
+        icon: React.createElement(CgWorkAlt),
+        date: "2023 DEC - 2024 APR",
+    },
+    {
+        title: "Software Developer",
+        location: "Delhi, IN",
+        description:
+            "Working as a Full Stack Software Developer at Symbiotic Consulting Group",
+        icon: React.createElement(CgWorkAlt),
+        date: "2024 MAY - Present",
+    },
 ] as const;
 
 export const projectsData = [
