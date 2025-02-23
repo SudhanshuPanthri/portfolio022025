@@ -5,7 +5,7 @@ const SubmitButton = () => {
 
     const { pending } = useFormStatus();
     return (
-        <button className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all hover:bg-gray-950 focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 disabled:scale-100 disabled:bg-opacity-65" disabled={pending} type="submit">
+        <button className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all hover:bg-gray-950 focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 disabled:scale-100 disabled:bg-opacity-65 dark:bg-white dark:bg-opacity-10" disabled={pending} type="submit">
             {
                 pending ? <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div> : (
                     <>
