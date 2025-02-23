@@ -1,7 +1,6 @@
 "use client"
 
-import ThemeContextProvider, { useTheme } from "@/context/theme-context";
-import { useContext } from "react";
+import { useTheme } from "@/context/theme-context";
 import { BsMoon, BsSun } from "react-icons/bs";
 
 const ThemeSwitcher = () => {

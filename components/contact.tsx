@@ -27,7 +27,7 @@ const Contact = () => {
             <SectionHeading name="Contact" />
             <p className="text-gray-700 -mt-5 dark:text-white/80">Please contact me directly at <a className="underline text-orange-500" href="mailto:panthrisudhanshu666@gmail.com">panthrisudhanshu666@gmail.com</a>{" "}or through this form</p>
             <form className="mt-10 flex flex-col dark:text-black" action={async (formData) => {
-                const { data, error } = await sendEmail(formData);
+                const { error } = await sendEmail(formData);
 
                 if (error) {
                     toast.error(error);
