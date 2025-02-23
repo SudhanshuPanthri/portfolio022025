@@ -60,7 +60,7 @@ const Intro = () => {
                 animate={{ opacity: 1, y: 0 }}
             >
                 <span className="font-bold">
-                    {`Hi, I'm Sudhanshu Panthri, {""}`}
+                    {`Hi, I'm Sudhanshu Panthri, `}
                 </span>
                 <span className="italic">
                     a software developer based in delhi. {""}

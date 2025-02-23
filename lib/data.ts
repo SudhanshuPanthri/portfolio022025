@@ -52,7 +52,7 @@ export const experiencesData = [{
     title: "Software Developer Intern",
     location: "Delhi, IN",
     description:
-        "Worked as a software developer intern at Symbiotic Consulting Group for 6 months working on tech stack of C#, .NET, SQL",
+        "Worked as a software developer intern at Symbiotic Consulting Group working on tech stack of C#, .NET, SQL",
     icon: React.createElement(CgWorkAlt),
     date: "2023 DEC - 2024 APR",
 },
