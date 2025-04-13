@@ -84,6 +84,8 @@ export const projectsData = [
       "CLERK",
     ],
     imageUrl: summarizeImg,
+    githubUrl: "https://github.com/SudhanshuPanthri/quickscribe",
+    deployedLink: "https://summarize-five-psi.vercel.app/",
   },
 ] as const;
 
